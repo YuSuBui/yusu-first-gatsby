@@ -1,0 +1,105 @@
+@import '_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 10px 5px;
+  margin-right: auto;
+  margin-left: auto;
+  .sign-in-container {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      text-align: center;
+      color: $primary-color;
+      font-size: 28px;
+    }
+    form {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      div {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        label {
+          padding: 5px 0px;
+          font-size: 14px;
+          font-weight: bolder;
+        }
+        input {
+          padding: 5px 5px;
+          font-size: 14px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          &::placeholder {
+            padding: 0 5px;
+            font-size: 14px;
+          }
+          &:focus {
+            margin: 0 5px;
+            border: 1px solid $primary-color;
+            outline: none;
+          }
+        }
+        p {
+          padding: 5px 0px;
+          font-size: 12px;
+          color: #FF0000;
+        } 
+      }
+      & .error input {
+        border: 1px solid #FF0000;
+      }
+      button {
+        margin: 10px auto;
+        width: 100%;
+        background: $primary-color;
+        outline: none;
+        color: #FFF;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+        font-size: 14px;
+        &:hover {
+          background: #FFF;
+          color: $primary-color;
+          border: 1px solid $primary-color;
+          border-color: $primary-color;
+          box-shadow: inset 0 1px 1px rgba(42, 33, 58, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 10px 0px;
+    width: 35%;
+  }
+}
+
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-name: shake;
+}
